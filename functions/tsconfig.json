@@ -12,4 +12,6 @@
     "esModuleInterop": true,
   },
   "compileOnSave": true,
+  "exclude": ["src/__tests__/*.ts"],
+  "include": ["src/*.ts"]
 }
