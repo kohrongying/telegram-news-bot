@@ -1,8 +1,16 @@
-import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
+import serviceAccount from "./serviceAccountKey.json";
+import { cronJob } from "./cron";
+import { newsHandler } from "./handler"
+import { DB_UID } from './config';
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+admin.initializeApp({
+  credential: admin.credential.cert((<any>serviceAccount)),
+  databaseURL: "https://news-chat-1212.firebaseio.com",
+  databaseAuthVariableOverride: {
+    uid: DB_UID
+  }  
+});
+
+export const getNews = newsHandler;
+export const refreshNewsJob = cronJob;
