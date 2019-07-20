@@ -1,6 +1,10 @@
-## News Telegram Bot
+## Telegram News Bot
 
 [Talk to me](telegram.me/ry_news_chat_bot): Deliver news to your telegram 
+
+| /start | Load More |
+|---|---|
+|<img src="ss1.png" alt="drawing" width="250"/>|<img src="ss2.png" alt="drawing" width="250"/>|
 
 
 Done on Node8, Firebase Functions with Typescript and Jest. 
