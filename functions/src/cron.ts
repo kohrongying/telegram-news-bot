@@ -3,10 +3,10 @@ import * as admin from 'firebase-admin';
 import axios from 'axios';
 import { API_KEY } from './config';
 
-export const cronJob = functions.pubsub.schedule('every 8 hours from 07:00 to 23:00')
+export const cronJob = functions.pubsub.schedule('every 12 hours from 06:00 to 18:00')
   .timeZone('Asia/Singapore')
   .onRun(async (context) => {
-    console.log('This will be run every day at 7am and 3pm!');
+    console.log('This will be run every day at 6am and 6pm!');
     try {
       // set subscribers article index to 0
       reinitializeArticleIndex()
